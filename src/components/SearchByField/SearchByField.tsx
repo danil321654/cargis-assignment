@@ -1,7 +1,9 @@
-import { SearchIcon } from "icons";
 import "./SearchByField.scss";
 
-export const SearchByField = () => {
+import { SearchIcon } from "icons";
+import { FC } from "react";
+
+export const SearchByField: FC = () => {
   return (
     <div className="searchByField">
       <SearchIcon className="searchByField__icon" />

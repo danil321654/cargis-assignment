@@ -1,8 +1,11 @@
-import { Button, SearchByField } from "components";
-import { AddIcon } from "icons";
 import "./SearchPanel.scss";
 
-export const SearchPanel = () => (
+import { FC } from "react";
+
+import { AddIcon } from "icons";
+import { Button, SearchByField } from "components";
+
+export const SearchPanel: FC = () => (
   <div className="searchPanel">
     <SearchByField />
     <Button>

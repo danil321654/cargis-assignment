@@ -1,0 +1,28 @@
+$base-color: #ddd;
+$shine-color: white;
+$animation-duration: 0.5s;
+
+@mixin skeleton {
+  animation: skeleton-loading $animation-duration linear infinite alternate;
+}
+
+.order-info-card {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04) !important;
+  gap: 24px !important;
+  padding: 24px !important;
+  &--loading {
+    @include skeleton;
+    & > * {
+      display: none;
+    }
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: $base-color;
+  }
+  100% {
+    background-color: $shine-color;
+  }
+}

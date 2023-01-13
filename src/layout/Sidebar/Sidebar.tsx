@@ -1,3 +1,5 @@
 import "./Sidebar.scss";
 
-export const Sidebar = () => <div className="sidebar" />;
+import { FC } from "react";
+
+export const Sidebar: FC = () => <div className="sidebar" />;

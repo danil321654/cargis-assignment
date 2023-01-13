@@ -1,33 +1,30 @@
-import { Loader, Tabs } from "components";
-import { SearchPanel } from "modules";
-import { useEffect, useState } from "react";
-import { OrderListElement } from "types";
-import { OrderCard } from "./components";
 import "./Orders.scss";
 
-export const Orders = () => {
+import { FC, useEffect, useState } from "react";
+
+import { OrderListElement } from "types";
+import { Loader, Tabs } from "components";
+import { OrderCard, SearchPanel } from "./components";
+
+export const Orders: FC = () => {
   const [orders, setOrders] = useState<OrderListElement[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    const getList = async () => {
-      try {
-        setIsLoading(true);
-        const response = await fetch(
-          `${process.env.REACT_APP_API_URL}/orders/list`
-        );
-        const json = await response.json();
-        setOrders(json);
-        setIsLoading(false);
-      } catch (e) {
+    setIsLoading(true);
+    fetch(`${process.env.REACT_APP_API_URL}/orders/list`)
+      .then((res) =>
+        res.json().then((json) => {
+          setOrders(json);
+          setIsLoading(false);
+        })
+      )
+      .catch((e) => {
         console.log(e);
         setIsLoading(false);
         setIsError(true);
-      }
-    };
-
-    getList();
+      });
   }, []);
 
   return (
