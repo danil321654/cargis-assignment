@@ -1,7 +1,8 @@
-import { Routes, Route } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
+
 import { routes } from "consts";
 import { Header, Sidebar } from "layout";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (

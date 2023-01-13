@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { ButtonProps } from "./types";
-import "./Button.css";
+import "./Button.scss";
 
 export const Button: FC<ButtonProps> = ({ className, ...props }) => {
   return (
