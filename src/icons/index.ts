@@ -5,3 +5,5 @@ export { ReactComponent as DeleteIcon } from "./delete.svg";
 export { ReactComponent as EditIcon } from "./edit.svg";
 export { ReactComponent as EyeIcon } from "./eye.svg";
 export { ReactComponent as SearchIcon } from "./search.svg";
+export { ReactComponent as ShieldIcon } from "./shield.svg";
+export { ReactComponent as VerifiedIcon } from "./verified.svg";

@@ -1,5 +1,6 @@
 import { Map } from "components";
 import { OrderData } from "types";
+import { AdditionalInfo, ClientInfo } from "./components";
 import { Card } from "./types";
 
 export const getCards: (order?: OrderData) => Card[] = (order) => {
@@ -26,7 +27,7 @@ export const getCards: (order?: OrderData) => Card[] = (order) => {
     {
       title: "Заказчик",
       className: "order__client",
-      children: <div className="order-info-card__content" />,
+      children: order && <ClientInfo order={order} />,
     },
     {
       title: "Маршрут на карте",
@@ -42,17 +43,17 @@ export const getCards: (order?: OrderData) => Card[] = (order) => {
     {
       title: "Погрузка",
       className: "order__load",
-      children: <div className="order-info-card__content" />,
+      children: order && <AdditionalInfo order={order} />,
     },
     {
       title: "Выгрузка",
       className: "order__unload",
-      children: <div className="order-info-card__content" />,
+      children: order && <AdditionalInfo order={order} />,
     },
     {
       title: "Дополнительно",
       className: "order__additional",
-      children: <div className="order-info-card__content" />,
+      children: order && <AdditionalInfo order={order} />,
     },
   ];
 };

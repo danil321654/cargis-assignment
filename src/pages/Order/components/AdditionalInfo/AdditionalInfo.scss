@@ -1,0 +1,22 @@
+.additional-info {
+  display: flex;
+  flex-direction: column;
+  &__row {
+    padding: 16px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__row-label {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: #627a86;
+  }
+  &__row-value {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: #232b2f;
+  }
+}
