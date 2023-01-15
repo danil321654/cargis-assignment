@@ -1,6 +1,6 @@
 import { Map } from "components";
 import { OrderData } from "types";
-import { AdditionalInfo, ClientInfo } from "./components";
+import { AdditionalInfo, ClientInfo, Details } from "./components";
 import { Card } from "./types";
 
 export const getCards: (order?: OrderData) => Card[] = (order) => {
@@ -22,7 +22,7 @@ export const getCards: (order?: OrderData) => Card[] = (order) => {
     {
       title: "Детали перевозки",
       className: "order__details",
-      children: <div className="order-info-card__content" />,
+      children: order && <Details order={order} />,
     },
     {
       title: "Заказчик",

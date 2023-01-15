@@ -1,0 +1,157 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #f7f7f7;
+  &__route-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &__points {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__distance {
+    border: 1.5px solid #e9edef;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 16px;
+    position: absolute;
+    top: -14px;
+    left: calc(50% - 40px);
+    align-self: center;
+    height: 34px;
+    background: white;
+  }
+  &__route-line {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  &__point {
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    letter-spacing: 0.3px;
+    color: #0c48a1;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  &__dot {
+    width: 6px;
+    height: 6px;
+    background: #bbc5cb;
+    border-radius: 50%;
+  }
+  &__dashed-line {
+    border: none;
+    border-top: 2px dashed #bbc5cb;
+    height: 2px;
+    width: 100%;
+    margin: 0 5px;
+  }
+  &__addresses {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__address {
+    width: 250px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  &__cards-container {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 116px;
+  }
+  &__card {
+    border-radius: 5px;
+    background: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+    &--dark {
+      background: linear-gradient(
+        238.58deg,
+        #0a50b8 0.06%,
+        #0c48a1 51.14%,
+        #033b8b 100%
+      );
+      .details__card-label,
+      .details__card-value,
+      .details__card-subvalue {
+        color: #ffffff;
+      }
+      .details__card-subvalue {
+        opacity: 0.6;
+      }
+    }
+  }
+  &__card-label {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #637a86;
+  }
+  &__progress {
+    max-width: 42px;
+    height: 42px;
+    stroke: white;
+  }
+  &__progress-trail {
+    stroke: rgba(255, 255, 255, 0.3) !important;
+  }
+  &__progress-path {
+    stroke: white !important;
+  }
+  &__value-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+  &__card-value {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 20px;
+    color: #232b2f;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  &__card-subvalue {
+    font-weight: 400;
+    font-size: 12px;
+    color: #637a86;
+  }
+  &__date-line {
+    gap: 28px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  &__date-icon {
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    left: calc(50% - 20px);
+    top: -9px;
+    z-index: 12;
+  }
+  &__date {
+    gap: 10px;
+    font-size: 15px;
+  }
+}
