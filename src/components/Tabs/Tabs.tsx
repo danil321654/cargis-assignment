@@ -1,3 +1,5 @@
-import "./Tabs.css";
+import "./Tabs.scss";
 
-export const Tabs = () => <div className="tabs" />;
+import { FC } from "react";
+
+export const Tabs: FC = () => <div className="tabs" />;

@@ -1,3 +1,5 @@
-import "./Header.css";
+import "./Header.scss";
 
-export const Header = () => <header className="header" />;
+import { FC } from "react";
+
+export const Header: FC = () => <header className="header" />;
