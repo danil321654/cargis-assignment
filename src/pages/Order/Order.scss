@@ -12,8 +12,12 @@
     row-gap: 20px;
     column-gap: 20px;
     overflow: auto;
-    grid-template-rows: 168px 252px 140px 190px 330px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 168px 252px 140px auto 330px;
+    --columns-count: 3;
+    grid-template-columns: repeat(
+      var(--columns-count),
+      calc((100% - ((var(--columns-count) - 1) * 20px)) / var(--columns-count))
+    );
     grid-template-areas:
       "a a b"
       "a a c"
@@ -22,8 +26,8 @@
       "f . .";
 
     @media (max-width: 1200px) {
+      --columns-count: 2;
       grid-template-rows: 440px 412px 330px 330px 330px;
-      grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
         "a a"
         "b c"

@@ -1,0 +1,26 @@
+.client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px;
+  padding-left: 20px;
+  background: rgba(236, 242, 252, 0.2);
+  border: 1px solid #e9edef;
+  border-radius: 8px;
+
+  &__value {
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #232b2f;
+  }
+  &__label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02px;
+    color: #627a86;
+  }
+}

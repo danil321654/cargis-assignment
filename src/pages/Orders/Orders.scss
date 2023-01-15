@@ -10,9 +10,19 @@
     padding: 28px;
     flex-grow: 1;
     display: grid;
-    row-gap: 24px;
-    column-gap: 24px;
     grid-auto-rows: 80px;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+
+    $grid-layout-gap: 24px;
+    $grid-column-count: 3;
+    $grid-item--min-width: 350px;
+    $gap-count: calc($grid-column-count - 1);
+    $total-gap-width: calc($gap-count * $grid-layout-gap);
+    $grid-item--max-width: calc((100% - $total-gap-width) / $grid-column-count);
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(max($grid-item--min-width, $grid-item--max-width), 1fr)
+    );
+
+    grid-gap: $grid-layout-gap;
   }
 }
