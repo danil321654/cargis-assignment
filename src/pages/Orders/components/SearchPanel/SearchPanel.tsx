@@ -4,10 +4,16 @@ import { FC } from "react";
 
 import { AddIcon } from "icons";
 import { Button, SearchByField } from "components";
+import { SearchPanelProps } from "./types";
 
-export const SearchPanel: FC = () => (
+const options = [
+  { value: "id", label: "По номеру заявки" },
+  { value: "create_dt", label: "По дате создания заявки" },
+];
+
+export const SearchPanel: FC<SearchPanelProps> = (props) => (
   <div className="searchPanel">
-    <SearchByField />
+    <SearchByField options={options} {...props} />
     <Button>
       <AddIcon /> Новая заявка
     </Button>

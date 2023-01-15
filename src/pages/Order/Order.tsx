@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from "react";
 import { OrderData } from "types";
 import { useLocation } from "react-router-dom";
 import { OrderInfoCard, OrderInfoHeader } from "./components";
-import { cards } from "./cards";
+import { getCards } from "./cards";
 
 export const Order: FC = () => {
   const { pathname } = useLocation();
@@ -14,6 +14,8 @@ export const Order: FC = () => {
   const [order, setOrder] = useState<undefined | OrderData>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  const cards = getCards(order);
 
   useEffect(() => {
     setIsLoading(true);

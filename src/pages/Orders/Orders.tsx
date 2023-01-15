@@ -1,12 +1,14 @@
 import "./Orders.scss";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useMemo, useState } from "react";
 
 import { OrderListElement } from "types";
 import { Loader, Tabs } from "components";
 import { OrderCard, SearchPanel } from "./components";
 
 export const Orders: FC = () => {
+  const [searchField, setSearchField] = useState<"id" | "create_dt">("id");
+  const [searchParam, setSearchParam] = useState("");
   const [orders, setOrders] = useState<OrderListElement[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -27,15 +29,30 @@ export const Orders: FC = () => {
       });
   }, []);
 
+  const foundOrders = useMemo(
+    () =>
+      orders.filter(
+        (order) =>
+          !searchParam ||
+          String(order[searchField])
+            .toLowerCase()
+            .includes(searchParam.toLowerCase())
+      ),
+    [orders, searchField, searchParam]
+  );
+
   return (
     <div className="orders">
-      <SearchPanel />
+      <SearchPanel
+        handleChange={setSearchParam}
+        handleChangeField={setSearchField as (value: string) => void}
+      />
       <Tabs />
       {isLoading || isError ? (
         <Loader />
       ) : (
         <div className="orders__list-container">
-          {orders.map((order) => (
+          {foundOrders.map((order) => (
             <OrderCard key={order.id} order={order} />
           ))}
         </div>
