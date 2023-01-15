@@ -1,9 +1,12 @@
 export { ReactComponent as AddIcon } from "./add.svg";
 export { ReactComponent as BackIcon } from "./back.svg";
+export { ReactComponent as CalendarIcon } from "./calendar.svg";
 export { ReactComponent as ClockIcon } from "./clock.svg";
+export { ReactComponent as ClockOutlineIcon } from "./clockOutline.svg";
 export { ReactComponent as DeleteIcon } from "./delete.svg";
 export { ReactComponent as EditIcon } from "./edit.svg";
 export { ReactComponent as EyeIcon } from "./eye.svg";
+export { ReactComponent as GeoPositionIcon } from "./geoPosition.svg";
 export { ReactComponent as SearchIcon } from "./search.svg";
 export { ReactComponent as ShieldIcon } from "./shield.svg";
 export { ReactComponent as VerifiedIcon } from "./verified.svg";
