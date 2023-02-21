@@ -13,10 +13,10 @@ export const SearchByField: FC<SearchByFieldProps> = ({
   const search = useDebouncedCallback(handleChange, 300);
 
   return (
-    <div className="searchByField">
-      <SearchIcon className="searchByField__icon" />
+    <div className="search-by-field">
+      <SearchIcon className="search-by-field__icon" />
       <select
-        className="searchByField__select"
+        className="search-by-field__select"
         onChange={(e) => handleChangeField(e.target.value)}
       >
         {options.map(({ value, label }) => (
@@ -25,9 +25,9 @@ export const SearchByField: FC<SearchByFieldProps> = ({
           </option>
         ))}
       </select>
-      <div className="searchByField__separator" />
+      <div className="search-by-field__separator" />
       <input
-        className="searchByField__input"
+        className="search-by-field__input"
         placeholder="Поиск заявок"
         onChange={(e) => search(e.target.value)}
       />

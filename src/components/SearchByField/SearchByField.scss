@@ -1,19 +1,20 @@
-.searchByField {
+.search-by-field {
   position: relative;
   flex-grow: 1;
   flex-shrink: 1;
   border: 1px solid #e9edef;
   border-radius: 300px;
   height: 40px;
-  padding: 10px 0;
+  padding: 0;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 16px;
 
   &__icon {
     position: absolute;
     left: 20px;
     z-index: 10;
+    align-self: center;
   }
 
   &__select {

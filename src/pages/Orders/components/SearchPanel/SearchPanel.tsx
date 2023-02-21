@@ -12,11 +12,11 @@ const options = [
 ];
 
 export const SearchPanel: FC<SearchPanelProps> = (props) => (
-  <div className="searchPanel">
+  <div className="search-panel">
     <SearchByField options={options} {...props} />
     <Button>
       <AddIcon /> Новая заявка
     </Button>
-    <div className="searchPanel__filterButton" />
+    <Button className="search-panel__filter-button">Фильтр</Button>
   </div>
 );

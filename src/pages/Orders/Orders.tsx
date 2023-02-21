@@ -7,7 +7,7 @@ import { Loader, Tabs } from "components";
 import { OrderCard, SearchPanel } from "./components";
 
 export const Orders: FC = () => {
-  const [searchField, setSearchField] = useState<"id" | "create_dt">("id");
+  const [searchField, setSearchField] = useState("id");
   const [searchParam, setSearchParam] = useState("");
   const [orders, setOrders] = useState<OrderListElement[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -34,7 +34,7 @@ export const Orders: FC = () => {
       orders.filter(
         (order) =>
           !searchParam ||
-          String(order[searchField])
+          String(order[searchField as keyof typeof order])
             .toLowerCase()
             .includes(searchParam.toLowerCase())
       ),
@@ -45,7 +45,7 @@ export const Orders: FC = () => {
     <div className="orders">
       <SearchPanel
         handleChange={setSearchParam}
-        handleChangeField={setSearchField as (value: string) => void}
+        handleChangeField={setSearchField}
       />
       <Tabs />
       {isLoading || isError ? (
